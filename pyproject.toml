@@ -1,0 +1,22 @@
+[project]
+name = "tag-classifier"
+version = "0.1.0"
+description = "Structured tag classification for AI image prompts (artist, character, feature, clothes, etc.)"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+tag-classifier = "tag_classifier.__main__:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["tag_classifier"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
